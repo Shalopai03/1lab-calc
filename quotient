@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор</title>
+</head>
+<body>
+    <h1>Калькулятор деления</h1>
+
+    <!-- Создаем форму для ввода переменных и кнопки для выполнения вычислений -->
+    <form id="calculatorForm">
+        <label for="chis1">Делимое:</label>
+        <input type="number" id="chis1" required><br><br>
+
+        <label for="chis2">Делитель:</label>
+        <input type="number" id="chis2" required><br><br>
+
+        <input type="button" value="Разделить" onclick="calculateDivision()">
+    </form>
+
+    <!-- Создаем место для вывода результата -->
+    <p>Результат деления: <span id="result"></span></p>
+
+    <script>
+        // Функция для выполнения деления
+        function calculateDivision() {
+            // Получаем значения переменных из формы
+            var devidend = parseFloat(document.getElementById("chis1").value);
+            var devisor = parseFloat(document.getElementById("chis2").value);
+
+            // Выполняем деление
+            var quotient = devidend / devisor;
+
+            // Выводим результат на странице
+            document.getElementById("result").textContent = quotient;
+        }
+    </script>
+</body>
+</html>
