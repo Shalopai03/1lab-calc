@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор</title>
+</head>
+<body>
+    <h1>Калькулятор деления с остатком</h1>
+
+    <!-- Создаем форму для ввода переменных и кнопки для выполнения вычислений -->
+    <form id="calculatorForm">
+        <label for="dividend">Делимое:</label>
+        <input type="number" id="dividend" required><br><br>
+
+        <label for="divisor">Делитель:</label>
+        <input type="number" id="divisor" required><br><br>
+
+        <input type="button" value="Деление с остатком" onclick="calculateRemainder()">
+    </form>
+
+     <!-- Создаем место для вывода результата -->
+    <p>Результат деления с остатком: <span id="result"></span></p>
+
+    <script>
+        // Функция для выполнения деления с остатком
+        function calculateRemainder() {
+            // Получаем значения переменных из формы
+            var dividend = parseInt(document.getElementById("dividend").value);
+            var divisor = parseInt(document.getElementById("divisor").value);
+
+            // Выполняем деление с остатком
+            var quotient = Math.floor(dividend / divisor);
+            var remainder = dividend % divisor;
+
+            // Выводим результат на странице
+            document.getElementById("result").textContent = `Результат: ${quotient} с остатком ${remainder}`;
+        }
+    </script>
+</body>
+</html>
